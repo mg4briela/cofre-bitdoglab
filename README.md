@@ -2,7 +2,7 @@
 
 Projeto de um cofre eletrônico usando a placa BitDogLab (RP2040).
 
-# Componentes
+## Componentes
 - Teclado 4x4
 - Display OLED (I2C)
 - Matriz WS2812B
@@ -10,10 +10,10 @@ Projeto de um cofre eletrônico usando a placa BitDogLab (RP2040).
 - Buzzer
 - MPU6050
 
-# Ferramentas
+## Ferramentas
 - Pico SDK
 - CMake
 - FreeRTOS (em integração)
 
-# Status
+## Status
 Sensores funcionando. Integração com FreeRTOS em andamento.
