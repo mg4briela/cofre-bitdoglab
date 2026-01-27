@@ -48,6 +48,16 @@ set(DRIVER_FILES
 add_executable(cofre
     ${SOURCE_FILES}
     ${DRIVER_FILES}
+
+    # Tasks FreeRTOS
+    src/tasks/task_teclado.c
+    src/tasks/task_cofre.c
+    src/tasks/task_display.c
+    src/tasks/task_acelerometro.c
+    src/tasks/task_buzzer.c
+    src/queue_shared.c
+
+    # Drivers
     src/drivers/display.c
     external/ssd1306/ssd1306.c
     src/drivers/matriz_led.c
