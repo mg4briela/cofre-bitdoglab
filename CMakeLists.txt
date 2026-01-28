@@ -51,7 +51,6 @@ add_executable(cofre
     ${SOURCE_FILES}
     ${DRIVER_FILES}
 
-
     # Drivers
     src/drivers/display.c
     external/ssd1306/ssd1306.c

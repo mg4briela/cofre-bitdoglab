@@ -3,13 +3,11 @@
 #include <math.h>
 #include "pico/stdlib.h"
 
-
 /* tasks */
 #include "tasks/task_buzzer.h"
 #include "tasks/task_cofre.h"
 #include "tasks/task_teclado.h"
 #include "tasks/task_acelerometro.h"
-
 
 /* FreeRTOS */
 #include "FreeRTOS.h"
