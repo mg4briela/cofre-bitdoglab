@@ -3,7 +3,7 @@
 // linhas
 uint8_t rowPins[ROWSPIN] = {4, 8, 9, 16};
 
-// Colunas
+// colunas
 uint8_t colPins[COLSPIN] = {17, 18, 19, 20};
 
 // mapa das teclas

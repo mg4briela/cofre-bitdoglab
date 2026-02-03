@@ -24,7 +24,7 @@ void acelerometro_read_raw(int16_t *ax, int16_t *ay, int16_t *az);
 // cálculo de inclinação
 float acelerometro_get_inclinacao(int16_t ax, int16_t ay, int16_t az);
 
-/* variação em relação ao zero */
+// variação em relação ao zero 
 float acelerometro_get_delta_inclinacao(int16_t ax, int16_t ay, int16_t az);
 
 

@@ -51,7 +51,7 @@ void matriz_write(void) {
     sleep_us(100);
 }
 
-/* estados do cofre */
+// estados do cofre
 void matriz_ok(void) {
     matriz_clear();
     matriz_set_led(LED_CENTRAL, 0, 255, 0); // verde
