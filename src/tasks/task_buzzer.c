@@ -1,7 +1,8 @@
-#include "task_buzzer.h"   
-#include "buzzer.h"        
-#include "FreeRTOS.h"      
-#include "queue.h"         
+// task_buzzer.c
+#include "task_buzzer.h"   // declara a task
+#include "buzzer.h"        // declara BUZZER_CMD_OK, buzzer_ok(), etc
+#include "FreeRTOS.h"      // tipos do FreeRTOS
+#include "queue.h"         // xQueueReceive
 #include "task_buzzer.h"
 
 void task_buzzer(void *p) {

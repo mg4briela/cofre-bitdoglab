@@ -7,7 +7,7 @@ static uint slice_num;
 static uint channel_num;
 static bool pwm_active = false;
 
-/* converte ângulo (0–180) em pulso em microssegundos */
+// converte ângulo (0–180) em pulso em microssegundos
 static uint32_t angle_to_pulse(uint angle)
 {
     if (angle > 180) angle = 180;
@@ -16,7 +16,7 @@ static uint32_t angle_to_pulse(uint angle)
            + SERVO_MIN_PULSE_US;
 }
 
-/* inicializa apenas o GPIO */
+// inicializa apenas o GPIO
 void servo_init(uint gpio)
 {
     servo_gpio = gpio;
@@ -26,7 +26,7 @@ void servo_init(uint gpio)
     gpio_put(servo_gpio, 0);
 }
 
-/* ativa PWM somente quando necessário */
+// ativa PWM somente quando necessário
 static void servo_pwm_enable(void)
 {
     if (pwm_active) return;
@@ -46,7 +46,7 @@ static void servo_pwm_enable(void)
     pwm_active = true;
 }
 
-/* desativa PWM (anti-jitter) */
+// desativa PWM (anti-jitter) 
 void servo_disable(void)
 {
     if (!pwm_active) return;
@@ -58,14 +58,14 @@ void servo_disable(void)
     pwm_active = false;
 }
 
-/* define o ângulo do servo */
+// define o ângulo do servo 
 void servo_set_angle(uint angle)
 {
     servo_pwm_enable();
     pwm_set_chan_level(slice_num, channel_num, angle_to_pulse(angle));
 }
 
-/* movimento padrão: abre e fecha o cofre */
+// movimento padrão: abre e fecha o cofre 
 void servo_open_and_close(void)
 {
     servo_pwm_enable();
