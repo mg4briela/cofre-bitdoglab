@@ -18,7 +18,7 @@ extern QueueHandle_t fila_buzzer;
 #define EVT_VIOLACAO (1 << 0)
 
 // limite
-#define LIMITE_INCLINACAO 50.0
+#define LIMITE_INCLINACAO 10.0
 
 // comandos do buzzer
 typedef enum {

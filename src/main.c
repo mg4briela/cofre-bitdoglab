@@ -27,7 +27,7 @@
 #define SENHA_TAM 4
 #define SENHA_CORRETA "8888"
 #define SERVO_GPIO 2
-#define LIMITE_INCLINACAO 50.0
+#define LIMITE_INCLINACAO 10.0
 
 // RTOS objects
 QueueHandle_t fila_teclas;
