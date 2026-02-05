@@ -67,7 +67,9 @@ void task_cofre(void *p) {
                     show_display();
                     matriz_ok();
                     buzzer_open();
+                    printf("[UART] Cofre DESTRAVADO.\n");
                     servo_open_and_close();
+                    printf("[UART] Cofre TRAVADO.\n");
                 } else {
                     printf("[UART] Senha incorreta! Acesso negado.\n");
                     display_text("ACESSO NEGADO", 0, 0, 1);
