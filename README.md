@@ -16,4 +16,4 @@ Projeto de um cofre eletrônico usando a placa BitDogLab (RP2040).
 - FreeRTOS (em integração)
 
 ## Status
-Sensores funcionando. Integração com FreeRTOS concluída. MQTT em andamento.
+Sensores funcionando. Integração com FreeRTOS concluída.
