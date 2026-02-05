@@ -52,16 +52,22 @@ int main() {
     buzzer_init();
     acelerometro_init();
 
+    printf("[UART] Hardware inicializado!\n");
+
     // RTOS objects
     fila_teclas = xQueueCreate(10, sizeof(char));
     fila_buzzer = xQueueCreate(5, sizeof(buzzer_cmd_t));
     eventos = xEventGroupCreate();
+
+    printf("[UART] Filas e eventos criados!\n");
 
     // criação das tasks
     xTaskCreate(task_teclado, "Teclado", 256, NULL, 2, NULL);
     xTaskCreate(task_cofre, "Cofre", 512, NULL, 3, NULL);
     xTaskCreate(task_acelerometro, "Accel", 256, NULL, 4, NULL);
     xTaskCreate(task_buzzer, "Buzzer", 256, NULL, 5, NULL);
+
+    printf("[UART] Tasks criadas. Iniciando Scheduler...\n");
 
     // inicia o RTOS
     vTaskStartScheduler();

@@ -23,6 +23,7 @@ void task_cofre(void *p) {
     char senha[SENHA_TAM + 1] = {0};
     int indice = 0;
     char tecla;
+    int violacao_printada = 0;
 
     display_text("Digite a senha:", 0, 0, 1);
     show_display();
@@ -31,6 +32,10 @@ void task_cofre(void *p) {
     while (1) {
 
         if (xEventGroupGetBits(eventos) & EVT_VIOLACAO) {
+            if (!violacao_printada) {
+                printf("[UART] Violacao detectada! Cofre bloqueado.\n");
+                violacao_printada = 1;
+            }
             vTaskDelay(pdMS_TO_TICKS(200));
             continue;
         }
@@ -44,6 +49,7 @@ void task_cofre(void *p) {
                 display_text("Limpo", 0, 0, 1);
                 show_display();
                 matriz_espera();
+                printf("[UART] Entrada de senha limpa.\n");
                 vTaskDelay(pdMS_TO_TICKS(800));
                 display_text("Digite a senha:", 0, 0, 1);
                 show_display();
@@ -56,12 +62,14 @@ void task_cofre(void *p) {
                 vTaskDelay(pdMS_TO_TICKS(800));
 
                 if (strcmp(senha, SENHA_CORRETA) == 0) {
+                    printf("[UART] Senha correta! Acesso autorizado.\n");
                     display_text("ACESSO AUTORIZADO", 0, 0, 1);
                     show_display();
                     matriz_ok();
                     buzzer_open();
                     servo_open_and_close();
                 } else {
+                    printf("[UART] Senha incorreta! Acesso negado.\n");
                     display_text("ACESSO NEGADO", 0, 0, 1);
                     show_display();
                     matriz_erro();
