@@ -42,7 +42,7 @@ EventGroupHandle_t eventos;
 
 int main() {
     stdio_init_all();
-    sleep_ms(2000);
+    sleep_ms(3000);
 
     // inicialização de hardware
     teclado_init();
